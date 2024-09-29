@@ -20,6 +20,7 @@ window.addEventListener('load', function() {
 
             if (query === '') {
                 document.body.classList.remove('results-visible'); // Hide results if query is empty
+                document.body.classList.remove('search-active'); // Hide results if query is empty
                 return;
             }
 
@@ -39,8 +40,10 @@ window.addEventListener('load', function() {
 
             if (filteredParticles.length > 0) {
                 document.body.classList.add('results-visible'); // Show results if any particles match
+                document.body.classList.add('search-active'); // Add class to hide toggle button
             } else {
                 document.body.classList.remove('results-visible'); // Hide results if no particles match
+                document.body.classList.remove('search-active'); // Remove class to show toggle button
             }
 
             // Function to highlight the search query in the results

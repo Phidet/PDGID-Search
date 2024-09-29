@@ -1,3 +1,9 @@
+html, body {
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrolling */
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -104,6 +110,7 @@ body.dark h1 {
     width: 100%;
     box-sizing: border-box;
     color: var(--text-color);
+    padding-bottom: 80px; /* Add padding to the bottom to ensure the last result is visible */
 }
 
 .result-item {
@@ -118,16 +125,23 @@ body.dark h1 {
 body.results-visible {
     justify-content: flex-start;
     padding-top: 20px;
+    overflow: auto; /* Allow scrolling when results are visible */
 }
 
 body.results-visible .container {
     margin-top: 20px;
 }
 
+body.search-active .toggle-container {
+    transform: translateY(-200%); /* Move the toggle button further up and out of the screen */
+    transition: transform 0.5s ease; /* Add transition for smooth movement */
+}
+
 .toggle-container {
     position: absolute;
     top: 20px;
     right: 20px;
+    transition: transform 0.5s ease; /* Add transition for smooth movement */
 }
 
 .toggle-label {
