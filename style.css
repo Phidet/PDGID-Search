@@ -31,7 +31,7 @@ body {
     --toggle-active-bg: #1c274c;
     --sun-icon-color: #f39c12;
     --moon-icon-color: #3498db;
-    --footer-text-color: #888;
+    --grey-text-color: #888;
 }
 
 body.dark {
@@ -48,7 +48,13 @@ body.dark {
     --toggle-bg: #444;
     --toggle-ball-bg: #fff;
     --toggle-active-bg: #1c274c;
-    --footer-text-color: #aaa;
+    --grey-text-color: #aaa;
+}
+
+.disclaimer {
+    color: var(--grey-text-color);
+    text-align: center;
+    margin-top: 10px;
 }
 
 body.dark h1 {
@@ -110,7 +116,7 @@ body.dark h1 {
     width: 100%;
     box-sizing: border-box;
     color: var(--text-color);
-    padding-bottom: 80px; /* Add padding to the bottom to ensure the last result is visible */
+    padding-bottom: 90px; /* Add padding to the bottom to ensure the last result is visible */
 }
 
 .result-item {
@@ -134,14 +140,14 @@ body.results-visible .container {
 
 body.search-active .toggle-container {
     transform: translateY(-200%); /* Move the toggle button further up and out of the screen */
-    transition: transform 0.5s ease; /* Add transition for smooth movement */
+    transition: transform 0.5s ease;
 }
 
 .toggle-container {
     position: absolute;
     top: 20px;
     right: 20px;
-    transition: transform 0.5s ease; /* Add transition for smooth movement */
+    transition: transform 0.5s ease;
 }
 
 .toggle-label {
@@ -232,11 +238,11 @@ body.search-active .toggle-container {
     text-align: center;
     padding: 5px 0;
     box-shadow: 0 -2px 5px var(--container-shadow);
-    color: var(--footer-text-color);
+    color: var(--grey-text-color);
 }
 
 .footer a {
-    color: var(--footer-text-color);
+    color: var(--grey-text-color);
     text-decoration: underline dotted;
 }
 

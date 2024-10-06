@@ -1,6 +1,7 @@
 window.addEventListener('load', function() {
     let particles = [];
     let searchTimeout;
+    const MAX_RESULTS = 10; // Maximum number of results to display
 
     // Fetch the particles data from particles.json
     fetch('particles.json')
@@ -46,14 +47,17 @@ window.addEventListener('load', function() {
                 document.body.classList.remove('search-active'); // Remove class to show toggle button
             }
 
+            // Limit the number of results to MAX_RESULTS
+            const limitedParticles = filteredParticles.slice(0, MAX_RESULTS);
+
             // Function to highlight the search query in the results
             const highlight = (text, query) => {
                 const regex = new RegExp(`(${query})`, 'gi');
                 return text.replace(regex, '<span class="highlight">$1</span>');
             };
 
-            // Display the filtered particles
-            filteredParticles.forEach(particle => {
+            // Display the limited filtered particles
+            limitedParticles.forEach(particle => {
                 const highlightedName = highlight(particle.full_name, query);
                 const highlightedPdgCode = highlight(particle.pdgCode.toString(), query);
                 const div = document.createElement('div');
@@ -67,6 +71,19 @@ window.addEventListener('load', function() {
                 `;
                 resultsContainer.appendChild(div); // Append the result item to the results container
             });
+
+            // Add a disclaimer if there are more potential matches
+            if (filteredParticles.length > MAX_RESULTS) {
+                const disclaimer = document.createElement('div');
+                disclaimer.className = 'disclaimer';
+                disclaimer.innerText = 'Only the first ' + MAX_RESULTS + ' partial matches are shown.';
+                resultsContainer.appendChild(disclaimer);
+            } else if (filteredParticles.length === 0) {
+                const disclaimer = document.createElement('div');
+                disclaimer.className = 'disclaimer';
+                disclaimer.innerText = 'No matches found.';
+                resultsContainer.appendChild(disclaimer);
+            }
 
             // Render LaTeX for the particle names
             renderMathInElement(resultsContainer, {
@@ -85,27 +102,6 @@ window.addEventListener('load', function() {
             document.body.classList.add('dark'); // Enable dark mode
         } else {
             document.body.classList.remove('dark'); // Disable dark mode
-        }
-    });
-});
-
-// Ensure the theme is consistent with the user's preference
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark'); // Apply dark mode if previously set
-        themeToggle.checked = true;
-    }
-
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            document.body.classList.add('dark'); // Enable dark mode
-            localStorage.setItem('theme', 'dark'); // Save preference to local storage
-        } else {
-            document.body.classList.remove('dark'); // Disable dark mode
-            localStorage.setItem('theme', 'light'); // Save preference to local storage
         }
     });
 });

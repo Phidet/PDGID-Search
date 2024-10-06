@@ -7,8 +7,11 @@
     <meta name="description" content="Lookup particles via PDG code or name.">
     <meta name="keywords" content="PDG, particle data, particle search, physics, particle physicsm particle ID, PDGID">
     <meta name="author" content="Phidet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"></noscript>
+    <script src="theme.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
     <script defer src="script.js"></script>
@@ -17,12 +20,14 @@
     <meta property="og:description" content="Search for particle data using PDG codes or names.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pdg.det.je">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=PDG+Lookup">
+    <meta property="og:image" content="screenshot.png">
+    <meta property="og:image:width" content="2848">
+    <meta property="og:image:height" content="1534">
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PDG Lookup - Particle Search">
     <meta name="twitter:description" content="Search for particle data using PDG codes or names.">
-    <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=PDG+Lookup">
+    <meta name="twitter:image" content="screenshot.png">
 </head>
 <body>
     <div class="toggle-container">
