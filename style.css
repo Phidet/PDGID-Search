@@ -32,7 +32,6 @@ body {
     --sun-icon-color: #f39c12;
     --moon-icon-color: #3498db;
     --grey-text-color: #888;
-    --footer-height: 50px; /* Default footer height */
 }
 
 body.dark {
@@ -116,7 +115,7 @@ body.dark h1 {
     width: 100%;
     box-sizing: border-box;
     color: var(--text-color);
-    padding-bottom: calc(var(--footer-height) + 20px); /* Add padding to the bottom to ensure the last result is visible */
+    padding-bottom: 90px; /* Add padding to the bottom to ensure the last result is visible */
 }
 
 .result-item {
