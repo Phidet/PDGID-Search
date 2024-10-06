@@ -20,7 +20,7 @@ body {
     --text-color: #000;
     --searchbox-bg: #fff;
     --searchbox-border: #ccc;
-    --searchbox-focus-bg: #d0d0d0;
+    --searchbox-focus-bg: #f9f9f9;
     --result-bg: #fff;
     --result-border: #ccc;
     --container-shadow: rgba(0, 0, 0, 0.1);
@@ -112,7 +112,6 @@ body.dark h1 {
 }
 
 #results {
-    margin-top: 20px;
     width: 100%;
     box-sizing: border-box;
     color: var(--text-color);
